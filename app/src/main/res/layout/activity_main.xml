@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/pattern_background"
     android:layout_height="match_parent">
+
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -54,7 +55,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/white"
-        android:onClick="goToProfile"
+        android:onClick="goToWelcome"
         android:text="@string/login"
         android:textColor="@color/black"
         android:textStyle="bold" />
