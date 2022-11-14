@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         /*View v = findViewById(R.id.button);
         v.setOnClickListener(this);*/
     }
-    public void goToActivity2 (View view){
-        Intent intent = new Intent (this, SecondActivity.class);
+    public void goToProfile (View view){
+        Intent intent = new Intent (this, Profile.class);
         startActivity(intent);
     }
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/Background"
+    android:background="@drawable/pattern_background"
     android:layout_height="match_parent">
 <TextView
     android:layout_width="match_parent"
@@ -43,18 +43,21 @@
     android:textStyle="bold"
     android:background="#30ffffff"/>
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/login"
-    android:id="@+id/login"
-    android:layout_below="@id/password"
-    android:backgroundTint="@color/white"
-    android:layout_margin="20dp"
-    android:layout_centerHorizontal="true"
-    android:textColor="@color/black"
-    android:textStyle="bold"
-    android:onClick="goToActivity2"/>
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:onClick="goToProfile"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
 <TextView
     android:layout_width="wrap_content"
