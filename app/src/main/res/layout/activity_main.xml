@@ -46,7 +46,7 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
@@ -59,19 +59,45 @@
         android:text="@string/login"
         android:textColor="@color/black"
         android:textStyle="bold" />
-
-<TextView
-    android:layout_width="wrap_content"
+<LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/Forget"
-    android:id="@+id/forgotpassword"
-    android:layout_below="@id/login"
-    android:textColor="@color/white"
-    android:layout_centerHorizontal="true"
-    android:textSize="20dp"
-    android:layout_margin="20dp"/>
+    android:layout_below="@+id/login"
+    android:gravity="center_horizontal">
 
-<TextView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Forget"
+        android:id="@+id/forgotpassword"
+        android:layout_below="@id/login"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_margin="10dp"
+        android:textColor="@color/purple_700"/>
+
+</LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"/>
+
+
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/other"
