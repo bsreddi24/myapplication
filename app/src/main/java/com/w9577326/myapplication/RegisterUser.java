@@ -23,7 +23,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth mAuth;
     private TextView banner, registerHere;
-    private EditText fullName, email, createPassword;
+    private EditText fullName, logEmail, logPassword;
     private ProgressBar progressBar;
 
     @Override
@@ -40,8 +40,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerHere.setOnClickListener(this);
 
         fullName = (EditText) findViewById(R.id.fullName);
-        email = (EditText) findViewById(R.id.email);
-        createPassword = (EditText) findViewById(R.id.createPassword);
+        logEmail = (EditText) findViewById(R.id.logEmail);
+        logPassword = (EditText) findViewById(R.id.logPassword);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
@@ -59,42 +59,42 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
     private void registerHere(){
         String enterFullName = fullName.getText().toString().trim();
-        String enteremail= email.getText().toString().trim();
-        String enterPassword = createPassword.getText().toString().trim();
+        String enterEmail= logEmail.getText().toString().trim();
+        String enterPassword = logPassword.getText().toString().trim();
 
         if (enterFullName.isEmpty()){
             fullName.setError("Full name is required!");
             fullName.requestFocus();
             return;
         }
-        if (enteremail.isEmpty()){
-            email.setError("Email ID is required!");
-            email.requestFocus();
+        if (enterEmail.isEmpty()){
+            logEmail.setError("Email ID is required!");
+            logEmail.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(enteremail).matches()) {
-            email.setError("Please provid a vaild Email Address!");
-            email.requestFocus();
+        if(!Patterns.EMAIL_ADDRESS.matcher(enterEmail).matches()) {
+            logEmail.setError("Please provid a vaild Email Address!");
+            logEmail.requestFocus();
             return;
         }
         if (enterPassword.isEmpty()){
-            createPassword.setError("Password is required!");
-            createPassword.requestFocus();
+            logPassword.setError("Password is required!");
+            logPassword.requestFocus();
             return;
         }
         if(enterPassword.length() < 6){
-            createPassword.setError("Min password length should be 6 characters!");
-            createPassword.requestFocus();
+            logPassword.setError("Min password length should be 6 characters!");
+            logPassword.requestFocus();
             return;
             }
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(enteremail, enterPassword)
+        mAuth.createUserWithEmailAndPassword(enterEmail, enterPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            User user = new User(enterFullName, enteremail);
+                            User user = new User(enterFullName, enterEmail);
 
                             FirebaseDatabase.getInstance().getReference("User")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -105,11 +105,10 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                             if (task.isSuccessful()) {
                                                 Toast.makeText(RegisterUser.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
-                                            }
-                                            else{
+                                            } else{
                                                 Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
-                                            }
+                                                }
                                         }
                                     });
                         }else{
