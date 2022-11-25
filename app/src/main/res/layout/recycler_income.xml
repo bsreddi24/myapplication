@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Income Amount"
+        android:id="@+id/income_amount_v"
+        android:textSize="18sp"
+        android:layout_marginVertical="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amount Details"
+        android:id="@+id/income_details_v"
+        android:textSize="16sp"
+        android:layout_marginVertical="4dp"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/income_timestamp_v"
+        android:text="Amount Details"
+        android:textSize="12sp"
+        android:layout_marginVertical="4dp"
+        android:gravity="right"/>
+
+</LinearLayout>

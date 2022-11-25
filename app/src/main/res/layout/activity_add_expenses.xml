@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="#D3D2D2"
     android:paddingTop="16dp"
-    tools:context=".AddIncome">
-    
+    tools:context=".AddExpenses">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,14 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/incomeTitle"
-            android:text="Add Income"
+            android:text="Add Expenses"
             android:textSize="26sp"
             android:textStyle="bold"
             android:layout_marginLeft="30dp"/>
         <ImageButton
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:id="@+id/saveIncome"
+            android:id="@+id/saveExp"
             android:src="@drawable/done"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -45,7 +44,7 @@
         android:padding="16dp">
 
         <EditText
-            android:id="@+id/incomeAmountText"
+            android:id="@+id/expAmountText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
@@ -55,18 +54,16 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/incomeDetailsText"
+            android:id="@+id/expDetailsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
             android:gravity="top"
-            android:hint="Add Income Details"
+            android:hint="Add Expenses Details"
             android:minLines="10"
             android:padding="12dp"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-
     </LinearLayout>
 
 </RelativeLayout>

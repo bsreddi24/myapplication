@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TimePicker;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-
-import java.sql.Timestamp;
 
 public class AddIncome extends AppCompatActivity {
     EditText incomeAmountText, incomeDetailsText;
@@ -39,7 +39,7 @@ public class AddIncome extends AppCompatActivity {
         Income income = new Income();
         income.setAmount(incomeAmount);
         income.setDetails(incomeDetails);
-//        income.setTimestamp(Timestamp.now);
+//        income.setTimestamp(Timestamp.now());
         saveIncomeToFirebase(income);
 
     }

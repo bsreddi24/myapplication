@@ -1,9 +1,11 @@
 package com.w9577326.myapplication;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -11,7 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.Query;
 
 ///**
 // * A simple {@link Fragment} subclass.
@@ -21,8 +25,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class IncomeFragment extends Fragment {
 
 
-    FloatingActionButton add_btn;
-    RecyclerView recyclerIncome;
+    FloatingActionButton add_btnIncome;
+//    RecyclerView recyclerIncome;
+    IncomeAdapter incomeAdapter;
+    RecyclerView recyclerView;
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,21 +76,51 @@ public class IncomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_income, container, false);
-        add_btn = v.findViewById(R.id.add_btn);
-        recyclerIncome = v.findViewById(R.id.recyclerIncome);
+        add_btnIncome = v.findViewById(R.id.add_btnIncome);
+        View recyclerIncome = v.findViewById(R.id.recyclerIncome);
+        IncomeAdapter incomeAdapter;
 
 
-        add_btn.setOnClickListener(new View.OnClickListener(){
+        add_btnIncome.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(getActivity(), AddIncome.class);
                 startActivity(intent);
             }
         });
-
+//        setupRecyclerView();
         return v;
+
 
     }
 
-
+//    private void setupRecyclerView() {
+//        Query query = Utility.getCollectionReferenceForIncomes().orderBy("timestamp", Query.Direction.DESCENDING);
+//        FirestoreRecyclerOptions<Income> options = new FirestoreRecyclerOptions.Builder<Income>()
+//                .setQuery(query,Income.class).build();
+////        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+////        RecyclerView myItems = recyclerView.findViewById(R.id.recyclerIncome);
+////        myItems.setLayoutManager(layoutManager);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+//        incomeAdapter = new IncomeAdapter(options,requireContext());
+//        recyclerView.setAdapter(incomeAdapter);
+//    }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        incomeAdapter.startListening();
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        incomeAdapter.stopListening();
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        incomeAdapter.notifyDataSetChanged();
+//    }
 }
