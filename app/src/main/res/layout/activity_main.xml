@@ -6,14 +6,32 @@
     android:background="@drawable/pattern_background"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/MM"
+        android:id="@+id/logo"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Money"
+        android:id="@+id/logoText"
+        android:layout_below="@id/logo"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textColor="#B27940"/>
+
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/signin"
     android:id="@+id/signin"
     android:textColor="#ffffff"
+    android:layout_below="@id/logoText"
     android:textSize="35dp"
-    android:layout_margin="50dp"
+    android:layout_margin="10dp"
     android:gravity="center"
     android:textStyle="bold"/>
 
@@ -54,8 +72,8 @@
         android:layout_below="@id/logPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/white"
         android:onClick="goToWelcome"
@@ -71,12 +89,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Forget"
+        android:text="Don't have an account"
         android:id="@+id/forgotpassword"
         android:layout_below="@id/signIn"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:layout_margin="10dp"/>
+        android:textSize="18sp"
+        android:layout_margin="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,9 +102,9 @@
         android:text="Register"
         android:id="@+id/register"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_margin="10dp"
-        android:textColor="@color/purple_700"/>
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
 
@@ -98,44 +116,6 @@
         style="?android:attr/progressBarStyleLarge"
         android:visibility="gone"
         tools:ignore="MissingConstraints"/>
-
-
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/other"
-    android:id="@+id/loginwith"
-    android:layout_above="@id/socialicons"
-    android:layout_centerHorizontal="true"
-    android:textColor="@color/white"
-    android:textSize="20dp"
-    android:textStyle="bold"/>
-
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:gravity="center"
-    android:id="@+id/socialicons">
-
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/google"
-        android:layout_margin="20dp"/>
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/facebook"
-        android:layout_margin="20dp"/>
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/twitter"
-        android:layout_margin="20dp"/>
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>
 

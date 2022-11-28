@@ -5,24 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pattern_background"
-    tools:context=".RegisterUser"
-    android:paddingTop="150dp">
+    tools:context=".RegisterUser">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/MM"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Already a user"
-        android:id="@+id/banner"
+        android:text="Manage Money"
+        android:id="@+id/logoText"
+        android:layout_below="@id/logo"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:textSize="20sp"/>
+        android:textSize="35sp"
+        android:textColor="#B27940"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Registration"
         android:id="@+id/userRegistration"
-        android:layout_below="@id/banner"
+        android:layout_below="@id/logoText"
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -75,7 +82,8 @@
         android:text="Register Here"
         android:id="@+id/registerHere"
         android:layout_below="@id/logPassword"
-        android:paddingVertical="15dp"/>
+        android:paddingVertical="15dp"
+        android:layout_marginBottom="20dp"/>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,4 +92,31 @@
         style="?android:attr/progressBarStyleLarge"
         android:visibility="gone"
         tools:ignore="MissingConstraints"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/registerHere"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already a user"
+            android:id="@+id/existingUser"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:layout_margin="2dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login Here"
+            android:id="@+id/banner"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 </RelativeLayout>
