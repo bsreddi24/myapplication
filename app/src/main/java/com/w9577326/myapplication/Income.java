@@ -1,6 +1,8 @@
 package com.w9577326.myapplication;
 
-import java.sql.Timestamp;
+//import java.sql.Timestamp;
+
+import com.google.firebase.Timestamp;
 
 public class Income {
     String amount;
@@ -30,7 +32,11 @@ public class Income {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+//    public void setTimestamp(Timestamp timestamp) {
+//        this.timestamp = timestamp;
+//    }
+
+    public void setTimestamp(com.google.firebase.Timestamp now) {
         this.timestamp = timestamp;
     }
 }

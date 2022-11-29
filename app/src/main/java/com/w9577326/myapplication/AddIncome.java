@@ -39,7 +39,7 @@ public class AddIncome extends AppCompatActivity {
         Income income = new Income();
         income.setAmount(incomeAmount);
         income.setDetails(incomeDetails);
-//        income.setTimestamp(Timestamp.now());
+        income.setTimestamp(Timestamp.now());
         saveIncomeToFirebase(income);
 
     }

@@ -48,6 +48,7 @@ public class Welcome extends AppCompatActivity {
                 return false;
             }
         });
+        nav.setSelectedItemId(R.id.profile) ;
 
     }
 

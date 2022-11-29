@@ -4,6 +4,8 @@ import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +28,7 @@ public class IncomeFragment extends Fragment {
 
 
     FloatingActionButton add_btnIncome;
-//    RecyclerView recyclerIncome;
+    RecyclerView recyclerIncome;
     IncomeAdapter incomeAdapter;
     RecyclerView recyclerView;
 
@@ -88,39 +90,48 @@ public class IncomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-//        setupRecyclerView();
+        setupRecyclerView(v);
         return v;
 
 
     }
 
-//    private void setupRecyclerView() {
-//        Query query = Utility.getCollectionReferenceForIncomes().orderBy("timestamp", Query.Direction.DESCENDING);
-//        FirestoreRecyclerOptions<Income> options = new FirestoreRecyclerOptions.Builder<Income>()
-//                .setQuery(query,Income.class).build();
-////        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-////        RecyclerView myItems = recyclerView.findViewById(R.id.recyclerIncome);
-////        myItems.setLayoutManager(layoutManager);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-//        incomeAdapter = new IncomeAdapter(options,requireContext());
-//        recyclerView.setAdapter(incomeAdapter);
-//    }
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        incomeAdapter.startListening();
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//        incomeAdapter.stopListening();
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        incomeAdapter.notifyDataSetChanged();
-//    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    private void setupRecyclerView(View v) {
+        Query query = Utility.getCollectionReferenceForIncomes().orderBy("timestamp", Query.Direction.DESCENDING);
+        FirestoreRecyclerOptions<Income> options = new FirestoreRecyclerOptions.Builder<Income>()
+                .setQuery(query,Income.class).build();
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView = v.findViewById(R.id.recyclerIncome);
+//        RecyclerView myItems = recyclerView.findViewById(R.id.recyclerIncome);
+//        myItems.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        incomeAdapter = new IncomeAdapter(options,requireContext());
+        recyclerView.setAdapter(incomeAdapter);
+
+        Utility.showToast(getContext(), String.valueOf(options));
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        incomeAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        incomeAdapter.stopListening();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        incomeAdapter.notifyDataSetChanged();
+    }
 }

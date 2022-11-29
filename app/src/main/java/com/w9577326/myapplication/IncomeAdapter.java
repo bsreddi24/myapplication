@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,8 @@ public class IncomeAdapter extends FirestoreRecyclerAdapter<Income, IncomeAdapte
 
     @Override
     protected void onBindViewHolder(@NonNull IncomeViewHolder holder, int position, @NonNull Income income) {
+
+
         holder.amountTextView.setText(income.amount);
         holder.detailsTextView.setText(income.details);
 //        holder.timestampTextView.setText(Utility.timestamptoString(income.timestamp));
@@ -42,6 +45,7 @@ public class IncomeAdapter extends FirestoreRecyclerAdapter<Income, IncomeAdapte
             amountTextView = itemView.findViewById(R.id.income_amount_v);
             detailsTextView = itemView.findViewById(R.id.income_details_v);
             timestampTextView = itemView.findViewById(R.id.income_timestamp_v);
+           // Utility.showToast(itemView.getContext(), String.valueOf(amountTextView.getText()));
         }
     }
 }
