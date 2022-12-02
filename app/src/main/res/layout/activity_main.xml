@@ -89,7 +89,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account"
+        android:text="Don't have an account?"
         android:id="@+id/forgotpassword"
         android:layout_below="@id/signIn"
         android:textColor="@color/white"
