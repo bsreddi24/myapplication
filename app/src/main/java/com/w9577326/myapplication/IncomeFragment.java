@@ -14,9 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.Query;
 
 ///**
@@ -28,9 +32,10 @@ public class IncomeFragment extends Fragment {
 
 
     FloatingActionButton add_btnIncome;
-    RecyclerView recyclerIncome;
-    IncomeAdapter incomeAdapter;
+//    RecyclerView recyclerIncome;
+    AdapterIncome adapterIncome;
     RecyclerView recyclerView;
+    ImageButton menuBtn;
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,21 +82,9 @@ public class IncomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_income, container, false);
-        add_btnIncome = v.findViewById(R.id.add_btnIncome);
-        View recyclerIncome = v.findViewById(R.id.recyclerIncome);
-        IncomeAdapter incomeAdapter;
+        View r = inflater.inflate(R.layout.fragment_income, container, false);
 
-
-        add_btnIncome.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(getActivity(), AddIncome.class);
-                startActivity(intent);
-            }
-        });
-        setupRecyclerView(v);
-        return v;
+        return r;
 
 
     }
@@ -99,39 +92,64 @@ public class IncomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupRecyclerView(view);
+        add_btnIncome = view.findViewById(R.id.add_btnIncome);
+        View recyclerIncome = view.findViewById(R.id.recycler_income);
+//        IncomeAdapter incomeAdapter;
+
+
+        add_btnIncome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddIncome.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void setupRecyclerView(View v) {
-        Query query = Utility.getCollectionReferenceForIncomes().orderBy("timestamp", Query.Direction.DESCENDING);
+    private void setupRecyclerView(View r) {
+        recyclerView = r.findViewById(R.id.recycler_income);
+        menuBtn = r.findViewById(R.id.menu_btn);
+        menuBtn.setOnClickListener((v)->showMenu());
+
+        Query query = Utility.getCollectionReferenceForIncomes().orderBy("amount", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Income> options = new FirestoreRecyclerOptions.Builder<Income>()
                 .setQuery(query,Income.class).build();
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView = v.findViewById(R.id.recyclerIncome);
-//        RecyclerView myItems = recyclerView.findViewById(R.id.recyclerIncome);
-//        myItems.setLayoutManager(layoutManager);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        incomeAdapter = new IncomeAdapter(options,requireContext());
-        recyclerView.setAdapter(incomeAdapter);
 
-        Utility.showToast(getContext(), String.valueOf(options));
+
+        adapterIncome = new AdapterIncome(options, this);
+        recyclerView.setAdapter(adapterIncome);
+
+
+
+
+//        Utility.showToast(getContext(), String.valueOf(options));
 
     }
+    void showMenu(){
+        // TODO Display Menu
+    }
+
+
+
 
     @Override
     public void onStart() {
         super.onStart();
-        incomeAdapter.startListening();
+
+        adapterIncome.startListening();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        incomeAdapter.stopListening();
+        adapterIncome.stopListening();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        incomeAdapter.notifyDataSetChanged();
+        adapterIncome.notifyDataSetChanged();
     }
 }

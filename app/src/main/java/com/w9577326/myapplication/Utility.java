@@ -20,7 +20,7 @@ public class Utility {
     static CollectionReference getCollectionReferenceForIncomes(){
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         return FirebaseFirestore.getInstance().collection("incomes")
-                .document(currentUser.getUid()).collection("my_income");
+                .document(currentUser.getUid()).collection("my_incomes");
 
     }
     static CollectionReference getCollectionReferenceForExpenses(){
@@ -29,7 +29,7 @@ public class Utility {
                 .document(currentUser.getUid()).collection("my_expenses");
 
     }
-    static String timestamptoString(Timestamp timestamp){
+    static String timestampToString(Timestamp timestamp){
         return new SimpleDateFormat("MM/dd/yyyy").format(timestamp.toDate());
     }
 }

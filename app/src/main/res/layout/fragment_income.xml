@@ -4,24 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IncomeFragment"
-    android:layout_marginHorizontal="20dp">
+    android:paddingHorizontal="20dp"
+    android:background="#CDCDCD">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Income"
-        android:id="@+id/titleIncome"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:id="@+id/title_bar">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Income"
+            android:id="@+id/titleIncome"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+        <ImageButton
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:id="@+id/menu_btn"
+            android:src="@drawable/menu"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </RelativeLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerIncome"
-        android:layout_below="@+id/titleIncome"/>
+        android:id="@+id/recycler_income"
+        android:layout_below="@+id/title_bar"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_btnIncome"

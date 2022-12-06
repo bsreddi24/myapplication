@@ -28,7 +28,8 @@
             android:src="@drawable/done"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
     </RelativeLayout>
 
