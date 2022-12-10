@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
 
-//    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://my-project-1498546804883-default-rtdb.europe-west1.firebasedatabase.app/");
+//    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://my-project-1498546804883-default-rtdb.europe-west1.firebasedatabase.app/").child("getUsers");
     private FirebaseAuth mAuth;
     private TextView banner, registerHere;
     private EditText fullName, logEmail, logPassword;
@@ -106,16 +106,20 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         public void onComplete(@NonNull Task<Void> task) {
 
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(RegisterUser.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                                Utility.showToast(RegisterUser.this, "User has been registered successfully");
+                                                finish();
+//                                                Toast.makeText(RegisterUser.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
 //                                                progressBar.setVisibility(View.GONE);
                                             } else{
-                                                Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                                                Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
+//                                                Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
 //                                                progressBar.setVisibility(View.GONE);
                                                 }
                                         }
                                     });
                         }else{
-                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                            Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
+//                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
 //                            progressBar.setVisibility(View.GONE);
                         }
                     }

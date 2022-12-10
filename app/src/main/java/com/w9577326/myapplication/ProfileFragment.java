@@ -1,14 +1,28 @@
 package com.w9577326.myapplication;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.BitSet;
 
 ///**
 // * A simple {@link Fragment} subclass.
@@ -17,8 +31,10 @@ import android.widget.ImageView;
 // */
 public class ProfileFragment extends Fragment {
 
-    Button updateProfile;
+    private Button logOut;
     ImageView profilePicture;
+    Button updateProfile;
+
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,9 +81,53 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_profile, container, false);
-        updateProfile = v.findViewById(R.id.updateProfile);
-        profilePicture = v.findViewById(R.id.profilePicture);
+
 
         return v;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        updateProfile = view.findViewById(R.id.updateProfile);
+        profilePicture = view.findViewById(R.id.profilePicture);
+
+        if (ContextCompat.checkSelfPermission(getActivity(),
+            Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.CAMERA}, 101);
+        }
+
+        updateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 101);
+            }
+        });
+
+
+
+        logOut = view.findViewById(R.id.logOut);
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101){
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            profilePicture.setImageBitmap(bitmap);
+        }
     }
 }

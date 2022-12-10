@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -24,7 +25,8 @@ import com.google.firebase.firestore.Query;
 // * create an instance of this fragment.
 // */
 public class ExpensesFragment extends Fragment {
-    FloatingActionButton add_btnExp;
+//    FloatingActionButton add_btnExp;
+    Button add_btnExp;
     //    RecyclerView recyclerIncome;
     AdapterExpenses adapterExpenses;
     RecyclerView recyclerView;

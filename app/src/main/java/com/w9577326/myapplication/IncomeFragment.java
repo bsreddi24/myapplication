@@ -31,7 +31,8 @@ import com.google.firebase.firestore.Query;
 public class IncomeFragment extends Fragment {
 
 
-    FloatingActionButton add_btnIncome;
+//    FloatingActionButton add_btnIncome;
+    Button add_btnIncome;
 //    RecyclerView recyclerIncome;
     AdapterIncome adapterIncome;
     RecyclerView recyclerView;

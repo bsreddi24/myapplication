@@ -51,7 +51,8 @@
             android:hint="Add Amount"
             android:padding="12dp"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:drawableStart="@drawable/pound"/>
 
         <EditText
             android:id="@+id/expDetailsText"
