@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp"
+    android:layout_marginVertical="8dp"
+    android:backgroundTint="@color/white"
+    android:background="@drawable/rounded_corners"
+    >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Income Amount"
+        android:textStyle="bold"
         android:id="@+id/income_amount_v"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:layout_marginVertical="4dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Amount Details"
         android:id="@+id/income_details_v"
+        android:textStyle="italic"
         android:textSize="16sp"
         android:layout_marginVertical="4dp"
         android:maxLines="2"
@@ -23,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/income_timestamp_v"
-        android:text="Amount Details"
+        android:text="TimeStamp"
         android:textSize="12sp"
         android:layout_marginVertical="4dp"
         android:gravity="right"/>
