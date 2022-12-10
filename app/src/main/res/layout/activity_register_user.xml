@@ -22,7 +22,7 @@
         android:layout_below="@id/logo"
         android:gravity="center"
         android:textSize="35sp"
-        android:textColor="#B27940"/>
+        android:textColor="#F68819"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -36,22 +36,27 @@
         android:textColor="@color/white"/>
 
     <EditText
+        android:id="@+id/fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Full Name"
-        android:id="@+id/fullName"
         android:layout_below="@+id/userRegistration"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:layout_margin="15dp"
-        android:padding="15dp"
-        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         android:background="#30ffffff"
-        android:inputType="text"/>
+        android:hint="  Username"
+        android:drawableStart="@drawable/username"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email Address"
+        android:hint="  Email Address"
+        android:drawableStart="@drawable/email"
         android:id="@+id/logEmail"
         android:layout_below="@id/fullName"
         android:textColorHint="@color/white"
@@ -65,7 +70,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="  Password"
+        android:drawableStart="@drawable/pass"
         android:id="@+id/logPassword"
         android:layout_below="@id/logEmail"
         android:textColorHint="@color/white"
@@ -76,14 +82,16 @@
         android:background="#30ffffff"
         android:inputType="textPassword"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Register Here"
+        android:backgroundTint="@color/purple_700"
         android:id="@+id/registerHere"
         android:layout_below="@id/logPassword"
-        android:paddingVertical="15dp"
-        android:layout_marginBottom="20dp"/>
+        android:paddingVertical="12dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="14sp"/>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
