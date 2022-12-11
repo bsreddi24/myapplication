@@ -2,6 +2,7 @@ package com.w9577326.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.widget.EditText;
@@ -21,6 +22,13 @@ public class AddExpenses extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expenses);
+
+        Fragment fragment = new MapFragment();
+
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.frame_layout,fragment).
+                commit();
 
         expAmountText = findViewById(R.id.expAmountText);
         expDetailsText = findViewById(R.id.expDetailsText);

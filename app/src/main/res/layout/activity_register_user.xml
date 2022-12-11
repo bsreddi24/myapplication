@@ -89,8 +89,8 @@
         android:backgroundTint="@color/purple_700"
         android:id="@+id/registerHere"
         android:layout_below="@id/logPassword"
+        android:layout_margin="15dp"
         android:paddingVertical="12dp"
-        android:layout_marginBottom="20dp"
         android:textSize="14sp"/>
     <ProgressBar
         android:layout_width="wrap_content"

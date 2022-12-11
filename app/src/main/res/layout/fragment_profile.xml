@@ -29,27 +29,29 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Profile"
+            android:text="Update Profile Picture"
             android:layout_gravity="center"
             android:id="@+id/updateProfile"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total Income"
-            android:id="@+id/totalIncome"
-            android:layout_marginLeft="50dp"
-            android:paddingTop="10dp"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total Expenses"
-            android:id="@+id/totalExpenses"
-            android:layout_marginLeft="50dp"
-            android:paddingTop="10dp"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Total Income"-->
+<!--            android:id="@+id/totalIncome"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="20sp"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Total Expenses"-->
+<!--            android:id="@+id/totalExpenses"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="20sp"/>-->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
