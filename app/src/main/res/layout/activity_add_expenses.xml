@@ -15,11 +15,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/incomeTitle"
+            android:id="@+id/expenseTitle"
             android:text="Add Expenses"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/purple_700"/>
         <ImageButton
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -59,7 +60,7 @@
             android:layout_marginVertical="8dp"
             android:gravity="top"
             android:hint="Add Expenses Details"
-            android:minLines="10"
+            android:minLines="6"
             android:padding="12dp"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -67,10 +68,23 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="275dp"
         android:id="@+id/frame_layout"
         android:layout_below="@id/contentAdd"
         android:layout_marginHorizontal="26dp"
         android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Expenses Details"
+        android:id="@+id/deleteExpense"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"/>
 
 </RelativeLayout>

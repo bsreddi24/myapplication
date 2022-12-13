@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+    private FirebaseAuth ParseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+    }
+
+    public void redirectIfLoggedIn(){
+        if(ParseUser.getCurrentUser()!=null){
+            Intent intent = new Intent(MainActivity.this, Welcome.class);
+            startActivity(intent);
+        }
     }
 
 }

@@ -106,21 +106,22 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         public void onComplete(@NonNull Task<Void> task) {
 
                                             if (task.isSuccessful()) {
-                                                Utility.showToast(RegisterUser.this, "User has been registered successfully");
+//                                                Utility.showToast(RegisterUser.this, "User has been registered successfully");
                                                 finish();
-//                                                Toast.makeText(RegisterUser.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
-//                                                progressBar.setVisibility(View.GONE);
+                                                startActivity(new Intent(RegisterUser.this, MainActivity.class));
+                                                Toast.makeText(RegisterUser.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                                progressBar.setVisibility(View.GONE);
                                             } else{
-                                                Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
-//                                                Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
-//                                                progressBar.setVisibility(View.GONE);
+//                                                Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
+                                                Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                                                progressBar.setVisibility(View.GONE);
                                                 }
                                         }
                                     });
                         }else{
-                            Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
-//                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
-//                            progressBar.setVisibility(View.GONE);
+//                            Utility.showToast(RegisterUser.this, "Failed to register! Try again!");
+                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

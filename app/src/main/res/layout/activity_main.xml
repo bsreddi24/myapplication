@@ -82,7 +82,7 @@
         android:paddingVertical="12dp"
         android:textStyle="bold"
         android:textSize="14sp"/>
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/signIn"
@@ -93,7 +93,6 @@
         android:layout_height="wrap_content"
         android:text="Don't have an account?"
         android:id="@+id/forgotpassword"
-        android:layout_below="@id/signIn"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_margin="5dp"/>
@@ -106,9 +105,10 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_margin="5dp"
+        android:layout_toRightOf="@id/forgotpassword"
         android:textColor="@color/white"/>
 
-</LinearLayout>
+</RelativeLayout>
 
     <ProgressBar
         android:layout_width="wrap_content"

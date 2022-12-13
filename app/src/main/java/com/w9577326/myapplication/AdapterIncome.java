@@ -1,6 +1,7 @@
 package com.w9577326.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,16 @@ public class AdapterIncome extends FirestoreRecyclerAdapter<Income, AdapterIncom
         holder.income_amount_v.setText(income.amount);
         holder.income_details_v.setText(income.details);
 //        holder.income_timestamp_v.setText(Utility.timestampToString(income.timestamp));
+
+        holder.itemView.setOnClickListener((v)->{
+            Intent intent = new Intent(v.getContext(),AddIncome.class);
+            intent.putExtra("amount",income.amount);
+            intent.putExtra("details",income.details);
+            String docId = this.getSnapshots().getSnapshot(position).getId();
+            intent.putExtra("docId",docId);
+            context.startActivity(intent);
+
+        });
 
     }
 

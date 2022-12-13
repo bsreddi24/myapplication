@@ -10,28 +10,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center">
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hai\n Welcome to your\n Money Management"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"/>
+            android:layout_height="100dp"
+            android:src="@drawable/mm"
+            android:layout_marginTop="100dp"/>
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/profilePicture"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/ic_baseline_account_circle_24"/>
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_baseline_account_circle_24" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hai\n Welcome to your\n Manage Money Profile"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Update Profile Picture"
             android:layout_gravity="center"
-            android:id="@+id/updateProfile"/>
+            android:id="@+id/updateProfile"
+            android:layout_marginVertical="20dp"/>
 
 
 <!--        <TextView-->
@@ -58,7 +64,6 @@
             android:text="Log Out"
             android:id="@+id/logOut"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
             android:onClick="goToMainActivity"/>
     </LinearLayout>
 
