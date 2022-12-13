@@ -7,8 +7,7 @@
     android:paddingVertical="10dp"
     android:layout_marginVertical="8dp"
     android:backgroundTint="@color/white"
-    android:background="@drawable/rounded_corners"
-    >
+    android:background="@drawable/rounded_corners">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

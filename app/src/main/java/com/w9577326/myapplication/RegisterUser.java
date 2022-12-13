@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
 
-//    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://my-project-1498546804883-default-rtdb.europe-west1.firebasedatabase.app/").child("getUsers");
+//    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://my-project-1498546804883-default-rtdb.firebaseio.com").child("getUsers");
     private FirebaseAuth mAuth;
     private TextView banner, registerHere;
     private EditText fullName, logEmail, logPassword;
