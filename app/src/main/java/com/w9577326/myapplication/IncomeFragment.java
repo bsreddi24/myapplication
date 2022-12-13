@@ -36,7 +36,7 @@ public class IncomeFragment extends Fragment {
 //    RecyclerView recyclerIncome;
     AdapterIncome adapterIncome;
     RecyclerView recyclerView;
-    ImageButton menuBtn;
+//    ImageButton menuBtn;
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -110,8 +110,8 @@ public class IncomeFragment extends Fragment {
 
     private void setupRecyclerView(View r) {
         recyclerView = r.findViewById(R.id.recycler_income);
-        menuBtn = r.findViewById(R.id.menu_btn);
-        menuBtn.setOnClickListener((v)->showMenu());
+//        menuBtn = r.findViewById(R.id.menu_btn);
+//        menuBtn.setOnClickListener((v)->showMenu());
 
         Query query = Utility.getCollectionReferenceForIncomes().orderBy("amount", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Income> options = new FirestoreRecyclerOptions.Builder<Income>()
@@ -128,9 +128,9 @@ public class IncomeFragment extends Fragment {
 //        Utility.showToast(getContext(), String.valueOf(options));
 
     }
-    void showMenu(){
-        // TODO Display Menu
-    }
+//    void showMenu(){
+//        // TODO Display Menu
+//    }
 
 
 

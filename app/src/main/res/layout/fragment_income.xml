@@ -8,10 +8,6 @@
     android:background="#CDCDCD">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/title_bar">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,24 +17,13 @@
             android:textStyle="bold"
             android:textColor="@color/purple_700"
             android:layout_marginTop="20dp"/>
-        <ImageButton
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:id="@+id/menu_btn"
-            android:src="@drawable/menu"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="30dp"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
-
-    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="575dp"
         android:id="@+id/recycler_income"
-        android:layout_below="@+id/title_bar"/>
+        android:layout_below="@+id/titleIncome"/>
 
 <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
 <!--        android:id="@+id/add_btnIncome"-->

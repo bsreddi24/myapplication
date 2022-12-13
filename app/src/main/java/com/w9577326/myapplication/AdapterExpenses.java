@@ -28,7 +28,7 @@ public class AdapterExpenses extends FirestoreRecyclerAdapter<Expense, AdapterEx
 //        holder.expenses_timestamp_v.setText(expense.timestamp);
 
         holder.itemView.setOnClickListener((v)->{
-            Intent intent = new Intent(v.getContext(),AddIncome.class);
+            Intent intent = new Intent(v.getContext(),AddExpenses.class);
             intent.putExtra("amount",expense.amount);
             intent.putExtra("details",expense.details);
             String docId = this.getSnapshots().getSnapshot(position).getId();

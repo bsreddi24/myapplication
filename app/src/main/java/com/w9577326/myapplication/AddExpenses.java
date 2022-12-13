@@ -51,8 +51,8 @@ public class AddExpenses extends AppCompatActivity {
             isEditMode = true;
         }
 
-        expAmountText.setText("amount");
-        expDetailsText.setText("details");
+        expAmountText.setText(amount);
+        expDetailsText.setText(details);
 
         if(isEditMode) {
             expenseTitle.setText("Edit your Expense Details");
@@ -80,16 +80,11 @@ public class AddExpenses extends AppCompatActivity {
         DocumentReference documentReference;
         if (isEditMode){
             //Update Expense Details
-            documentReference = Utility.getCollectionReferenceForExpenses().document();
-
+            documentReference = Utility.getCollectionReferenceForExpenses().document(docId);
         }else{
-
             //Add new Expense Details
             documentReference = Utility.getCollectionReferenceForExpenses().document();
-
         }
-
-
         documentReference.set(expense).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

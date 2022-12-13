@@ -84,11 +84,9 @@ public class AddIncome extends AppCompatActivity {
         if (isEditMode){
             //Update Income details
             documentReference = Utility.getCollectionReferenceForIncomes().document(docId);
-
         }else{
             //Create new Income Details
             documentReference = Utility.getCollectionReferenceForIncomes().document();
-
         }
         documentReference.set(income).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -123,9 +121,6 @@ public class AddIncome extends AppCompatActivity {
         });
 
     }
-
-
-
     }
 
 

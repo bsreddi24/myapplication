@@ -30,7 +30,7 @@ public class ExpensesFragment extends Fragment {
     //    RecyclerView recyclerIncome;
     AdapterExpenses adapterExpenses;
     RecyclerView recyclerView;
-    ImageButton menuBtn;
+//    ImageButton menuBtn;
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,8 +99,8 @@ public class ExpensesFragment extends Fragment {
 
     private void setupRecyclerView(View r){
         recyclerView = r.findViewById(R.id.recycler_expenses);
-        menuBtn = r.findViewById(R.id.menu_btn);
-        menuBtn.setOnClickListener((v)->showMenu());
+//        menuBtn = r.findViewById(R.id.menu_btn);
+//        menuBtn.setOnClickListener((v)->showMenu());
         Query query = Utility.getCollectionReferenceForExpenses().orderBy("amount", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Expense> options = new FirestoreRecyclerOptions.Builder<Expense>()
                 .setQuery(query,Expense.class).build();
@@ -109,9 +109,9 @@ public class ExpensesFragment extends Fragment {
         adapterExpenses = new AdapterExpenses(options, this);
         recyclerView.setAdapter(adapterExpenses);
     }
-    void showMenu(){
-        // TODO Display Menu
-    }
+//    void showMenu(){
+//        // TODO Display Menu
+//    }
 
     @Override
     public void onStart() {
