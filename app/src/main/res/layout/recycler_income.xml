@@ -14,7 +14,7 @@
         android:text="Income Amount"
         android:textStyle="bold"
         android:id="@+id/income_amount_v"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:layout_marginVertical="4dp"
         android:drawableStart="@drawable/pound"
         android:textColor="@color/black"/>
